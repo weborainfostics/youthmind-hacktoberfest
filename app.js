@@ -12,7 +12,7 @@ import {
     signInWithPopup,
     sendPasswordResetEmail,
     getAdditionalUserInfo,
-    sendEmailVerification // <-- ADD THIS
+    sendEmailVerification // <--  
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 import {
     getFirestore,
@@ -38,8 +38,8 @@ let isTourActive = false;
 let currentTourStep = 0;
 let previousBadgeCount = 0; // For badge notifications
 let sleepChartData = [];
-let reminders = []; // <-- ADD THIS
-let reminderCheckInterval = null; // <-- ADD THIS
+let reminders = []; // <--  
+let reminderCheckInterval = null; // <--  
 let isDarkMode = false;
 const TOUR_STEPS = [
     { selector: '#mood-picker', title: 'Track Your Mood', text: 'Select your main feeling here, then pick a more specific sub-mood. Your choice sets the app\'s background vibe!' },
@@ -3509,9 +3509,9 @@ function main() {
                 updateChatMessages(chatMessages, isTyping, false);
             });
             await refreshMoodData(u.uid);
-            await refreshSleepData(u.uid); // <-- ADD THIS LINE
-            await refreshReminders(u.uid); // <-- ADD THIS
-            startReminderChecks();        // <-- ADD THIS
+            await refreshSleepData(u.uid); // <--   LINE
+            await refreshReminders(u.uid); // <--  
+            startReminderChecks();        // <--  
             applyMoodTheme(todayMood?.label || "Neutral");
             renderAppContent(false);
             drawInteractiveChart(chartData);
@@ -3526,7 +3526,7 @@ function main() {
             applyMoodTheme("Neutral"); // Reset theme to default
             profile = null;
             reminders = []; // Clear reminders
-            stopReminderChecks(); // <-- ADD THIS
+            stopReminderChecks(); // <--  
             renderAuthCard();
         }
     });
